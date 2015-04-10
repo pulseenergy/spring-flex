@@ -63,7 +63,9 @@ public class EndpointConfigProcessor implements MessageBrokerConfigProcessor, Be
             Endpoint endpoint = (Endpoint) broker.getEndpoints().get(key);
             ProxyFactory factory = new ProxyFactory();
             factory.setProxyTargetClass(true);
-            factory.addAllAdvisors(this.advisors);
+            for (EndpointAdvisor advisor : this.advisors) {
+                factory.addAdvisor(advisor);
+            }
             factory.setTarget(endpoint);
             factory.setFrozen(true);
             Endpoint proxy = (Endpoint) factory.getProxy(this.proxyClassLoader);

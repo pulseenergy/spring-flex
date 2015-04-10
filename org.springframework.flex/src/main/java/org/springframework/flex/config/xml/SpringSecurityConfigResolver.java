@@ -15,7 +15,7 @@ public class SpringSecurityConfigResolver {
     static SpringSecurityConfigHelper resolve() {
 
         try {
-            ClassUtils.forName(SECURITY3_AUTHENTICATION_CLASSNAME);
+            ClassUtils.forName(SECURITY3_AUTHENTICATION_CLASSNAME, ClassUtils.getDefaultClassLoader());
             return createConfigHelper(SECURITY3_CONFIG_HELPER_CLASSNAME);
         } catch (ClassNotFoundException ex) {
             return createConfigHelper(SECURITY2_CONFIG_HELPER_CLASSNAME);
@@ -25,7 +25,7 @@ public class SpringSecurityConfigResolver {
     
     static SpringSecurityConfigHelper createConfigHelper (String helperClassName) {
         try {
-            return (SpringSecurityConfigHelper) ClassUtils.forName(helperClassName).newInstance();
+            return (SpringSecurityConfigHelper) ClassUtils.forName(helperClassName, ClassUtils.getDefaultClassLoader()).newInstance();
         } catch (Exception ex) {
             throw new BeanCreationException("Could not construct an appropriate implementation of " + SpringSecurityConfigHelper.class.getName(), ex);
         }
