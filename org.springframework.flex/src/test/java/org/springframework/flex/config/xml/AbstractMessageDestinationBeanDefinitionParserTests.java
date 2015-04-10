@@ -16,9 +16,10 @@
 
 package org.springframework.flex.config.xml;
 
+import java.util.Arrays;
+
 import org.springframework.flex.config.AbstractFlexConfigurationTests;
 
-import edu.emory.mathcs.backport.java.util.Arrays;
 import flex.messaging.MessageBroker;
 import flex.messaging.MessageDestination;
 import flex.messaging.config.ThrottleSettings;

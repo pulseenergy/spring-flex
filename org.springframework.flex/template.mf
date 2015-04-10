@@ -5,8 +5,7 @@ Bundle-ManifestVersion: 2
 Excluded-Imports: org.springframework.flex.config.xml.RemotingDestinationBeanDefinitionParserTests,
  org.springframework.util.ReflectionUtils,
  org.springframework.flex.config.RemotingAnnotationPostProcessorTests
-Import-Template: edu.emory.mathcs.backport.java.util.concurrent;version="[2.2.0,3.0.0)",
- flex.management;version="[3.2.0,4.1.0)",
+Import-Template: flex.management;version="[3.2.0,4.1.0)",
  flex.messaging;version="[3.2.0,4.1.0)",
  flex.messaging.client;version="[3.2.0,4.1.0)",
  flex.messaging.config;version="[3.2.0,4.1.0)",
