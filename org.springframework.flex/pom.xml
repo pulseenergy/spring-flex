@@ -9,6 +9,7 @@
 	<version>1.0.4.BUILD-SNAPSHOT</version>
 
 	<dependencies>
+		<!-- core dependencies -->
 		<dependency>
 			<groupId>backport-util-concurrent</groupId>
 			<artifactId>backport-util-concurrent</artifactId>
@@ -85,6 +86,8 @@
 			<artifactId>blazeds-remoting</artifactId>
 			<version>3.2.0.3978</version>
 		</dependency>
+
+		<!-- Optional runtime dependencies -->
 		<dependency>
 			<groupId>javax.jms</groupId>
 			<artifactId>jms</artifactId>
@@ -132,6 +135,32 @@
 			<artifactId>jackson-core-asl</artifactId>
 			<version>1.0.0</version>
 			<optional>true</optional>
+		</dependency>
+
+		<!-- test time only dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>1.8.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.3.0</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
